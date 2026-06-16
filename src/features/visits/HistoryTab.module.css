@@ -1,0 +1,166 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--border);
+}
+
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.visitNum {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--primary);
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+}
+
+.badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.badgeRx {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badgeLab {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.section {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.vitals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vital {
+  display: flex;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.vitalLabel {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.vitalValue {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.histField {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  align-items: baseline;
+}
+
+.histLabel {
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+.histValue {
+  color: var(--text);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.rxList {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  font-size: 36px;
+}

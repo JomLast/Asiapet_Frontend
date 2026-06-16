@@ -1,0 +1,277 @@
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.catSelect {
+  width: auto;
+  min-width: 160px;
+}
+
+.count {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.drugCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drugCard:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.drugCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.drugName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+}
+
+.drugBrand {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  display: block;
+}
+
+.catBadge {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.drugClass {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+.drugUse {
+  font-size: 13px;
+  color: var(--text);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.warnPreview {
+  font-size: 12px;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+}
+
+/* === Drug Detail Modal === */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detailHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.detailLabel {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.warnBox {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #78350f;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.warnBox p {
+  margin: 0;
+}
+
+.contraBox {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #9f1239;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contraBox ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.doseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.doseCell {
+  font-weight: 600;
+  color: var(--primary);
+  font-family: monospace;
+}
+
+.srcCell {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Dose calculator */
+.calculator {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calcTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0369a1;
+  margin: 0;
+}
+
+.calcRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.calcField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calcField label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0369a1;
+  margin: 0;
+}
+
+.rawDose {
+  font-size: 13px;
+  color: #0369a1;
+  margin: 0;
+  padding: 8px 10px;
+  background: #e0f2fe;
+  border-radius: 6px;
+}
+
+.rawDoseLabel {
+  font-weight: 700;
+}
+
+.rawDose code {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.calcResult {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 2px solid #0ea5e9;
+  border-radius: 8px;
+}
+
+.calcResultLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.calcResultValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0c4a6e;
+  font-family: monospace;
+}
+
+.calcNote {
+  font-size: 13px;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin: 0;
+}

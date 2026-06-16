@@ -1,0 +1,35 @@
+.searchBar {
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  max-width: 400px;
+}
+
+.count {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.hnCell {
+  font-weight: 700;
+  color: var(--primary);
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.nameCell {
+  font-weight: 600;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}

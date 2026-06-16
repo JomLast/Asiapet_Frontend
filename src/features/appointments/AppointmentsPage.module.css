@@ -1,0 +1,120 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.dateInput {
+  width: auto;
+  padding: 6px 10px;
+}
+
+.count {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dateGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dateHeader {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: monospace;
+  padding: 8px 0 8px 2px;
+  border-bottom: 2px solid var(--primary-light);
+  margin-bottom: 0;
+  letter-spacing: 0.04em;
+}
+
+.timeCell {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.hnCell {
+  font-weight: 700;
+  color: var(--primary);
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.notesCell {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.statusCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusSelect {
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.deleteBtn {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.error {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #c53030;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
