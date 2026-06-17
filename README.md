@@ -5,7 +5,7 @@ Thai-language Electronic Health Record system for veterinary clinics, built with
 ## Requirements
 
 - Node.js 18+
-- Backend running on port 4000 (see `D:\VetAsiaPet\backend`)
+- The AsiaPet backend running on port 4000 — clone & run [`Asiapet_Backend`](https://github.com/JomLast/Asiapet_Backend) (`npm install && npm run seed && npm run dev`). It is self-contained (content seed bundled).
 
 ## Setup
 
@@ -49,6 +49,20 @@ Password: asiapet123
 | Variable       | Default                        | Description             |
 |----------------|--------------------------------|-------------------------|
 | VITE_API_URL   | http://localhost:4000/api      | Backend API base URL    |
+
+## Deploy (static host)
+
+This is a pure client SPA — host the build anywhere static (Netlify / Vercel / Cloudflare Pages):
+
+```bash
+# point at your deployed backend, then build
+echo "VITE_API_URL=https://your-backend-host/api" > .env
+npm run build        # → dist/
+# upload the dist/ folder to your static host
+```
+
+The backend is the subscription "brain" (auth + per-clinic license + data). For the full subscription
+deployment guide (backend hosting, clinic provisioning, renewals), see **`DEPLOY.md` in the `Asiapet_Backend` repo**.
 
 ## Project structure
 
