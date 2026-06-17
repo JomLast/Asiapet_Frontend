@@ -8,7 +8,7 @@ import type {
 } from '@shared/types';
 
 export function getPatients(search?: string): Promise<ListResponse<Patient>> {
-  const qs = search ? `?search=${encodeURIComponent(search)}` : '';
+  const qs = search ? `?q=${encodeURIComponent(search)}` : '';
   return api.get<ListResponse<Patient>>(`/patients${qs}`);
 }
 

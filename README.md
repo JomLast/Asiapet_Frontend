@@ -10,7 +10,6 @@ Thai-language Electronic Health Record system for veterinary clinics, built with
 ## Setup
 
 ```bash
-cd frontend
 cp .env.example .env
 npm install
 ```
