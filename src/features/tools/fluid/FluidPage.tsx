@@ -4,6 +4,7 @@
  * Data: FLUID_MAINT (line 9050) and FLUID_SPECIES_LABEL (line 9067) → seed fluid-maint.json
  */
 import React, { useMemo, useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { getFluidMaint } from '../../../api/content';
 import Spinner from '../../../components/Spinner';
@@ -276,7 +277,7 @@ export default function FluidPage() {
                 />
               </div>
               <div className={styles.warnBlock}>
-                ⚠ <strong>SHOCK PROTOCOL:</strong> Give 1/4 of calculated bolus (
+                <AlertTriangle size={14} /> <strong>SHOCK PROTOCOL:</strong> Give 1/4 of calculated bolus (
                 {result.shockIncrement.toFixed(1)} ml) over 10–15 min, reassess perfusion
                 (CRT, pulse quality, MM color, BP). Repeat if no response. Do NOT give full{' '}
                 {result.shockBolus.toFixed(1)} ml all at once — risk volume overload /

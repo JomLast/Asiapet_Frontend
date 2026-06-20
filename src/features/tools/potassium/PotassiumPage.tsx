@@ -16,6 +16,7 @@
  * renderKScott at line 13041. The formulas here are ported from renderKScott exactly.
  */
 import React, { useMemo, useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import th from '../../../i18n/th';
 import styles from '../tools.module.css';
 
@@ -106,7 +107,7 @@ export default function PotassiumPage() {
       ) : scale === 'hyperkalemic' ? (
         /* HYPERKALEMIC — verbatim from renderKScott line 13053 */
         <div className={styles.dangerBlock}>
-          <strong>⚠ K+ = {kVal} is HYPERKALEMIC.</strong> Stop K+ supplementation.
+          <strong><AlertTriangle size={14} /> K+ = {kVal} is HYPERKALEMIC.</strong> Stop K+ supplementation.
           Consider: calcium gluconate (cardioprotection), insulin + dextrose, NaHCO3,
           or hemodialysis depending on severity.
         </div>
@@ -142,7 +143,7 @@ export default function PotassiumPage() {
 
             {/* Warning — verbatim from renderKScott line 13061 */}
             <div className={styles.warnBlock}>
-              <strong>⚠ NEVER exceed max fluid rate</strong> — K+ infusion rate &gt; 0.5 mEq/kg/h
+              <strong><AlertTriangle size={14} /> NEVER exceed max fluid rate</strong> — K+ infusion rate &gt; 0.5 mEq/kg/h
               causes fatal cardiac arrhythmia. Recheck serum K+ q4-6h until normal. Monitor ECG
               continuously if K+ &lt; 2 or supplementing at high rate.
             </div>

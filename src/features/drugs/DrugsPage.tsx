@@ -6,6 +6,7 @@ import Spinner from '../../components/Spinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import Modal from '../../components/Modal';
 import th from '../../i18n/th';
+import { AlertTriangle, Calculator } from 'lucide-react';
 import styles from './DrugsPage.module.css';
 
 export default function DrugsPage() {
@@ -109,7 +110,7 @@ function DrugCard({ drug, onClick }: { drug: Drug; onClick: () => void }) {
       {drug.cls && <p className={styles.drugClass}>{drug.cls}</p>}
       {drug.use && <p className={styles.drugUse}>{drug.use}</p>}
       {drug.warn && (
-        <p className={styles.warnPreview}>⚠️ {drug.warn.slice(0, 80)}{drug.warn.length > 80 ? '…' : ''}</p>
+        <p className={styles.warnPreview}><AlertTriangle size={14} /> {drug.warn.slice(0, 80)}{drug.warn.length > 80 ? '…' : ''}</p>
       )}
     </button>
   );
@@ -137,7 +138,7 @@ function DrugDetail({ drug }: { drug: Drug }) {
       {/* Warning */}
       {drug.warn && (
         <div className={styles.warnBox}>
-          <strong>⚠️ {th.warning}</strong>
+          <strong><AlertTriangle size={14} /> {th.warning}</strong>
           <p>{drug.warn}</p>
         </div>
       )}
@@ -225,7 +226,7 @@ function DoseCalculator({ doses }: { doses: DrugDose[] }) {
 
   return (
     <div className={styles.calculator}>
-      <h4 className={styles.calcTitle}>🧮 {th.doseCalculator}</h4>
+      <h4 className={styles.calcTitle}><Calculator size={16} /> {th.doseCalculator}</h4>
       <div className={styles.calcRow}>
         <div className={styles.calcField}>
           <label htmlFor="calc-weight">{th.bodyWeight}</label>

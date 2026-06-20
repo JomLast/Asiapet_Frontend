@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { Visit, RxItem } from '@shared/types';
 import { createVisit, updateVisit } from '../../api/patients';
 import { useQueryClient } from '@tanstack/react-query';
+import { AlertTriangle, SquarePen } from 'lucide-react';
 import th from '../../i18n/th';
 import styles from './RxTab.module.css';
 
@@ -72,7 +73,7 @@ export default function RxTab({ hn, visits }: Props) {
         <div className={styles.actions}>
           {!editMode && (
             <button className="btn btn-primary" onClick={() => { setItems(latestVisit?.rx?.items ?? []); setEditMode(true); }} type="button">
-              ✏️ {th.edit}
+              <SquarePen size={14} /> {th.edit}
             </button>
           )}
           {editMode && (
@@ -91,7 +92,7 @@ export default function RxTab({ hn, visits }: Props) {
         </div>
       </div>
 
-      {error && <div className={styles.error} role="alert">⚠️ {error}</div>}
+      {error && <div className={styles.error} role="alert"><AlertTriangle size={14} /> {error}</div>}
 
       {rxItems.length === 0 ? (
         <div className={styles.empty}>
