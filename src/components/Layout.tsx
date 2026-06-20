@@ -16,6 +16,8 @@ export default function Layout() {
 
   return (
     <div className={styles.shell}>
+      <span className={styles.demoBadge} title="โหมดสาธิต — ข้อมูลตัวอย่าง">DEMO</span>
+
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div

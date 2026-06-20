@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { useAuth } from '../../store/authContext';
 import { login } from '../../api/auth';
@@ -18,9 +18,38 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [autoLoggingIn, setAutoLoggingIn] = useState(true);
+  const started = useRef(false);
+
+  // Demo branch: sign in automatically on load — no login needed.
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    setEmail(DEMO_EMAIL);
+    setPassword(DEMO_PASSWORD);
+    void doLogin({ email: DEMO_EMAIL, password: DEMO_PASSWORD }).finally(() => setAutoLoggingIn(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
+  }
+
+  if (autoLoggingIn && !error) {
+    return (
+      <div className={styles.page}>
+        <div className={styles.card}>
+          <div className={styles.brand}>
+            <span className={styles.brandIcon}>🐾</span>
+            <h1 className={styles.brandName}>{th.appName}</h1>
+            <p className={styles.brandSub}>{th.clinicSystem}</p>
+          </div>
+          <p style={{ textAlign: 'center', color: '#64748b', fontSize: 14 }}>
+            🎬 กำลังเข้าสู่โหมด Demo…
+          </p>
+        </div>
+      </div>
+    );
   }
 
   async function doLogin(creds: { email: string; password: string }) {
