@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Dog, Pill, BookOpen } from 'lucide-react';
 import { useAuth } from '../../store/authContext';
 import th from '../../i18n/th';
 import styles from './HomePage.module.css';
@@ -9,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="page">
       <div className={styles.hero}>
-        <span className={styles.heroIcon}>🐾</span>
+        <img src="/logo.png" alt="Asiapet Animal Hospital" className={styles.heroIcon} style={{ height: 64, width: 'auto' }} />
         <h1 className={styles.heroTitle}>{th.welcomeTitle}</h1>
         <p className={styles.heroSub}>{th.welcomeSubtitle}</p>
         {user && (
@@ -22,21 +23,21 @@ export default function HomePage() {
       <h2 className={styles.sectionTitle}>{th.quickNav}</h2>
       <div className={styles.grid}>
         <Link to="/patients" className={styles.tile}>
-          <span className={styles.tileIcon}>🐶</span>
+          <Dog className={styles.tileIcon} size={28} />
           <div>
             <div className={styles.tileName}>{th.patients}</div>
             <div className={styles.tileSub}>{th.viewPatients}</div>
           </div>
         </Link>
         <Link to="/drugs" className={styles.tile}>
-          <span className={styles.tileIcon}>💊</span>
+          <Pill className={styles.tileIcon} size={28} />
           <div>
             <div className={styles.tileName}>{th.drugReference}</div>
             <div className={styles.tileSub}>{th.viewDrugs}</div>
           </div>
         </Link>
         <Link to="/diseases" className={styles.tile}>
-          <span className={styles.tileIcon}>📋</span>
+          <BookOpen className={styles.tileIcon} size={28} />
           <div>
             <div className={styles.tileName}>{th.diseaseLibrary}</div>
             <div className={styles.tileSub}>{th.viewDiseases}</div>

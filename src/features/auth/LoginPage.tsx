@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { useAuth } from '../../store/authContext';
 import { login } from '../../api/auth';
@@ -39,7 +40,7 @@ export default function LoginPage() {
       <div className={styles.card}>
         {/* Logo / Brand */}
         <div className={styles.brand}>
-          <span className={styles.brandIcon}>🐾</span>
+          <img src="/logo.png" alt="Asiapet Animal Hospital" className={styles.brandIcon} style={{ height: 56, width: 'auto' }} />
           <h1 className={styles.brandName}>{th.appName}</h1>
           <p className={styles.brandSub}>{th.clinicSystem}</p>
         </div>
@@ -73,7 +74,7 @@ export default function LoginPage() {
 
           {error && (
             <div className={styles.errorBox} role="alert">
-              ⚠️ {error}
+              <AlertTriangle size={15} style={{ verticalAlign: '-2px' }} /> {error}
             </div>
           )}
 
