@@ -5,6 +5,11 @@ import { login } from '../../api/auth';
 import th from '../../i18n/th';
 import styles from './LoginPage.module.css';
 
+// Demo account seeded by the backend (npm run seed) — lets visitors try the app
+// without signing in. See the `demo` branch.
+const DEMO_EMAIL = 'vet@asiapet.local';
+const DEMO_PASSWORD = 'asiapet123';
+
 export default function LoginPage() {
   const { isAuthenticated, setAuth } = useAuth();
   const navigate = useNavigate();
@@ -18,12 +23,11 @@ export default function LoginPage() {
     return <Navigate to="/" replace />;
   }
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  async function doLogin(creds: { email: string; password: string }) {
     setError('');
     setLoading(true);
     try {
-      const res = await login({ email, password });
+      const res = await login(creds);
       setAuth(res.token, res.user);
       navigate('/', { replace: true });
     } catch (err) {
@@ -32,6 +36,17 @@ export default function LoginPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    void doLogin({ email, password });
+  }
+
+  function handleDemo() {
+    setEmail(DEMO_EMAIL);
+    setPassword(DEMO_PASSWORD);
+    void doLogin({ email: DEMO_EMAIL, password: DEMO_PASSWORD });
   }
 
   return (
@@ -85,6 +100,17 @@ export default function LoginPage() {
             {loading ? th.loggingIn : th.loginButton}
           </button>
         </form>
+
+        <div className={styles.divider}><span>หรือ</span></div>
+
+        <button
+          type="button"
+          className={`btn btn-secondary ${styles.submitBtn}`}
+          onClick={handleDemo}
+          disabled={loading}
+        >
+          🎬 ลองใช้แบบ Demo (ไม่ต้องล็อกอิน)
+        </button>
 
         <p className={styles.hint}>{th.demoHint}</p>
       </div>

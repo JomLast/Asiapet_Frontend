@@ -43,6 +43,13 @@ Email:    vet@asiapet.local
 Password: asiapet123
 ```
 
+## Demo mode (no login)
+
+The login screen has a **🎬 ลองใช้แบบ Demo (ไม่ต้องล็อกอิน)** button that signs in with the
+demo account automatically — visitors can explore the app without typing credentials.
+It works against the backend's seeded demo account (run `npm run seed` in `Asiapet_Backend`,
+which also creates sample patients + an appointment). Point `VITE_API_URL` at that backend.
+
 ## Environment variables
 
 | Variable       | Default                        | Description             |
