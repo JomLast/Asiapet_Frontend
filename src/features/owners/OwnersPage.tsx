@@ -6,6 +6,7 @@ import Spinner from '../../components/Spinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import Modal from '../../components/Modal';
 import th from '../../i18n/th';
+import { AlertTriangle, SquarePen, Trash2 } from 'lucide-react';
 import styles from './OwnersPage.module.css';
 
 interface OwnerFormData {
@@ -170,14 +171,14 @@ export default function OwnersPage() {
                             onClick={() => openEdit(owner)}
                             type="button"
                           >
-                            ✏️ {th.edit}
+                            <SquarePen size={14} /> {th.edit}
                           </button>
                           <button
                             className={`btn btn-ghost ${styles.deleteBtn}`}
                             onClick={() => handleDelete(owner)}
                             type="button"
                           >
-                            🗑 {th.delete}
+                            <Trash2 size={14} /> {th.delete}
                           </button>
                         </div>
                       </td>
@@ -250,7 +251,7 @@ export default function OwnersPage() {
 
             {formError && (
               <div className={styles.error} role="alert">
-                ⚠️ {formError}
+                <AlertTriangle size={14} /> {formError}
               </div>
             )}
 

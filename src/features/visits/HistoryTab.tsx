@@ -1,4 +1,5 @@
 import type { Visit } from '@shared/types';
+import { CalendarDays } from 'lucide-react';
 import th from '../../i18n/th';
 import styles from './HistoryTab.module.css';
 
@@ -12,7 +13,7 @@ export default function HistoryTab({ visits }: Props) {
   if (sorted.length === 0) {
     return (
       <div className={styles.empty}>
-        <span className={styles.emptyIcon}>📅</span>
+        <CalendarDays className={styles.emptyIcon} size={40} />
         <p>{th.noHistory}</p>
       </div>
     );

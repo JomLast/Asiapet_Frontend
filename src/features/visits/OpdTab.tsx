@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { Visit, OpdRecord } from '@shared/types';
 import { createVisit, updateVisit } from '../../api/patients';
 import { useQueryClient } from '@tanstack/react-query';
+import { AlertTriangle, SquarePen } from 'lucide-react';
 import th from '../../i18n/th';
 import styles from './OpdTab.module.css';
 
@@ -105,7 +106,7 @@ export default function OpdTab({ hn, visits }: Props) {
                 + {th.addVisit}
               </button>
               <button className="btn btn-primary" onClick={() => setEditMode(true)} type="button">
-                ✏️ {th.edit}
+                <SquarePen size={14} /> {th.edit}
               </button>
             </>
           )}
@@ -130,7 +131,7 @@ export default function OpdTab({ hn, visits }: Props) {
         </div>
       </div>
 
-      {error && <div className={styles.error} role="alert">⚠️ {error}</div>}
+      {error && <div className={styles.error} role="alert"><AlertTriangle size={14} /> {error}</div>}
 
       <div className={styles.grid}>
         <OpdField label={th.weight} value={opd.weight} field="weight" editMode={editMode} onChange={setField} placeholder="kg" />

@@ -16,6 +16,7 @@ import IpdTab from '../visits/IpdTab';
 import FollowupTab from '../visits/FollowupTab';
 import VaccinesTab from '../visits/VaccinesTab';
 import th from '../../i18n/th';
+import { SquarePen } from 'lucide-react';
 import styles from './PatientDetailPage.module.css';
 
 type TabId = 'opd' | 'rx' | 'history' | 'lab' | 'imaging' | 'ipd' | 'followup' | 'vaccines';
@@ -78,7 +79,7 @@ export default function PatientDetailPage() {
             onClick={() => setShowEdit(true)}
             type="button"
           >
-            ✏️ {th.edit}
+            <SquarePen size={14} /> {th.edit}
           </button>
         </div>
 

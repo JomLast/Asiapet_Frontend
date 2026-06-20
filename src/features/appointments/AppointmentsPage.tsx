@@ -12,6 +12,7 @@ import Spinner from '../../components/Spinner';
 import ErrorMessage from '../../components/ErrorMessage';
 import Modal from '../../components/Modal';
 import th from '../../i18n/th';
+import { AlertTriangle, Trash2 } from 'lucide-react';
 import styles from './AppointmentsPage.module.css';
 
 type BadgeVariant = 'emergency' | 'urgent' | 'chronic' | 'routine' | 'info' | 'success' | 'neutral';
@@ -235,7 +236,7 @@ export default function AppointmentsPage() {
                                   type="button"
                                   disabled={updatingId === appt.id}
                                 >
-                                  🗑 {th.delete}
+                                  <Trash2 size={14} /> {th.delete}
                                 </button>
                               </td>
                             </tr>
@@ -311,7 +312,7 @@ export default function AppointmentsPage() {
 
             {formError && (
               <div className={styles.error} role="alert">
-                ⚠️ {formError}
+                <AlertTriangle size={14} /> {formError}
               </div>
             )}
 

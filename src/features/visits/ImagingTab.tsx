@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { Visit } from '@shared/types';
 import { createVisit, updateVisit } from '../../api/patients';
 import { useQueryClient } from '@tanstack/react-query';
+import { AlertTriangle, SquarePen } from 'lucide-react';
 import th from '../../i18n/th';
 import styles from './ImagingTab.module.css';
 
@@ -80,7 +81,7 @@ export default function ImagingTab({ hn, visits }: Props) {
               }}
               type="button"
             >
-              ✏️ {th.edit}
+              <SquarePen size={14} /> {th.edit}
             </button>
           )}
           {editMode && (
@@ -108,7 +109,7 @@ export default function ImagingTab({ hn, visits }: Props) {
 
       {error && (
         <div className={styles.error} role="alert">
-          ⚠️ {error}
+          <AlertTriangle size={14} /> {error}
         </div>
       )}
 

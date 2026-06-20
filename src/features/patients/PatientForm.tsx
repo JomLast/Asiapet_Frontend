@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { CreatePatientRequest } from '@shared/types';
 import th from '../../i18n/th';
+import { AlertTriangle } from 'lucide-react';
 import styles from './PatientForm.module.css';
 
 interface Props {
@@ -195,7 +196,7 @@ export default function PatientForm({ initial = {}, onSubmit, onCancel, isEdit =
       </fieldset>
 
       {error && (
-        <div className={styles.error} role="alert">⚠️ {error}</div>
+        <div className={styles.error} role="alert"><AlertTriangle size={14} /> {error}</div>
       )}
 
       <div className={styles.actions}>

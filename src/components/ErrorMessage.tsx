@@ -1,3 +1,4 @@
+import { AlertTriangle } from 'lucide-react';
 import styles from './ErrorMessage.module.css';
 import th from '../i18n/th';
 
@@ -9,7 +10,7 @@ interface Props {
 export default function ErrorMessage({ message, onRetry }: Props) {
   return (
     <div className={styles.box} role="alert">
-      <span className={styles.icon}>⚠️</span>
+      <AlertTriangle className={styles.icon} size={16} />
       <p className={styles.msg}>{message ?? th.errorLoad}</p>
       {onRetry && (
         <button className={styles.retryBtn} onClick={onRetry} type="button">

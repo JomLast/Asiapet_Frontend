@@ -13,6 +13,7 @@
  *   rate = syringe / h_                        (ml/h delivery rate)
  */
 import React, { useMemo, useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { getFlkConc } from '../../../api/content';
 import Spinner from '../../../components/Spinner';
@@ -183,7 +184,7 @@ export default function FLKPage() {
       ) : result.exceeds ? (
         /* Overflow warning — verbatim from AsiaPet.html line 12947-12949 */
         <div className={styles.overflowWarn}>
-          ⚠ {th.flkExceeds}: Total drug volume ({result.totalDrug.toFixed(2)} ml) exceeds
+          <AlertTriangle size={14} /> {th.flkExceeds}: Total drug volume ({result.totalDrug.toFixed(2)} ml) exceeds
           syringe size ({result.syr} ml). Choose a larger syringe or reduce duration.
         </div>
       ) : (
@@ -237,9 +238,9 @@ export default function FLKPage() {
             <div className={styles.warnBlock}>
               <strong>Dose ranges:</strong> Fentanyl 0.002-0.005 mg/kg/h · Lidocaine 1-6 mg/kg/h ·
               Ketamine 0.1-1.2 mg/kg/h<br />
-              <strong>⚠ Cats:</strong> Lidocaine CRI caution — risk of lidocaine toxicity
+              <strong><AlertTriangle size={14} /> Cats:</strong> Lidocaine CRI caution — risk of lidocaine toxicity
               (lower dose 0.5-2 mg/kg/h).<br />
-              <strong>⚠ Hepatic disease:</strong> Reduce lidocaine + fentanyl rates by 50%.
+              <strong><AlertTriangle size={14} /> Hepatic disease:</strong> Reduce lidocaine + fentanyl rates by 50%.
               Monitor TPR + CRT + MM hourly.
             </div>
           </div>

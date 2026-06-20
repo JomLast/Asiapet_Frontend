@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { PawPrint, Home, Dog, User, CalendarDays, Inbox, Pill, BookOpen, LogOut, Menu } from 'lucide-react';
 import { useAuth } from '../store/authContext';
 import th from '../i18n/th';
 import styles from './Layout.module.css';
@@ -30,7 +31,7 @@ export default function Layout() {
       {/* Sidebar */}
       <aside className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ''}`}>
         <div className={styles.brand}>
-          <span className={styles.brandIcon}>🐾</span>
+          <PawPrint className={styles.brandIcon} size={22} />
           <span className={styles.brandName}>{th.appName}</span>
         </div>
 
@@ -41,7 +42,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>🏠</span>
+            <Home className={styles.navIcon} size={20} />
             {th.home}
           </NavLink>
           <NavLink
@@ -49,7 +50,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>🐶</span>
+            <Dog className={styles.navIcon} size={20} />
             {th.patients}
           </NavLink>
           <NavLink
@@ -57,7 +58,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>👤</span>
+            <User className={styles.navIcon} size={20} />
             {th.owners}
           </NavLink>
           <NavLink
@@ -65,7 +66,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>📅</span>
+            <CalendarDays className={styles.navIcon} size={20} />
             {th.appointments}
           </NavLink>
           <NavLink
@@ -73,7 +74,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>📲</span>
+            <Inbox className={styles.navIcon} size={20} />
             {th.bookings}
           </NavLink>
           <NavLink
@@ -81,7 +82,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>💊</span>
+            <Pill className={styles.navIcon} size={20} />
             {th.drugReference}
           </NavLink>
           <NavLink
@@ -89,7 +90,7 @@ export default function Layout() {
             className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
             onClick={() => setSidebarOpen(false)}
           >
-            <span className={styles.navIcon}>📋</span>
+            <BookOpen className={styles.navIcon} size={20} />
             {th.diseaseLibrary}
           </NavLink>
         </nav>
@@ -105,7 +106,7 @@ export default function Layout() {
             </div>
           )}
           <button className={styles.logoutBtn} onClick={handleLogout} type="button">
-            <span className={styles.navIcon}>🚪</span>
+            <LogOut className={styles.navIcon} size={18} />
             {th.logout}
           </button>
         </div>
@@ -120,7 +121,7 @@ export default function Layout() {
             aria-label="เปิดเมนู"
             type="button"
           >
-            ☰
+            <Menu size={24} />
           </button>
           <h1 className={styles.pageTitle}>{th.clinicSystem}</h1>
         </header>

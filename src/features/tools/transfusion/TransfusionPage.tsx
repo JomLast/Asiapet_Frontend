@@ -17,6 +17,7 @@
  *   Dog K=90, Cat K=70, Rabbit K=66 (default)
  */
 import React, { useMemo, useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
 import th from '../../../i18n/th';
 import styles from '../tools.module.css';
 
@@ -224,7 +225,7 @@ export default function TransfusionPage() {
               />
             </div>
             <div className={styles.warnBlock}>
-              <strong>⚠ Monitor vitals every 15-30 min.</strong> Maximum infusion time 4-6 h.
+              <strong><AlertTriangle size={14} /> Monitor vitals every 15-30 min.</strong> Maximum infusion time 4-6 h.
               Watch for: tachycardia, dyspnea, hyperthermia, hemoglobinuria, vomiting →
               STOP transfusion + treat reaction.
             </div>
